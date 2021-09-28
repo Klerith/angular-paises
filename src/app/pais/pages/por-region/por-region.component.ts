@@ -16,10 +16,11 @@ import { PaisService } from '../../services/pais.service';
 })
 export class PorRegionComponent {
 
-  regiones: string[] = ['africa', 'americas', 'asia', 'europe', 'oceania'];
+  regiones: string[] = ['EU', 'EFTA', 'CARICOM', 'PA', 'AU', 'USAN', 'EEU', 'AL', 'ASEAN', 'CAIS', 'CEFTA', 'NAFTA', 'SAARC',];
   regionActiva: string = '';
   paises: Country[] = [];
 
+  
   constructor( private paisService: PaisService ) { }
 
   getClaseCSS( region: string ): string {

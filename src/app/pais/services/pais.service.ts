@@ -10,10 +10,10 @@ import { tap } from 'rxjs/operators';
 })
 export class PaisService {
 
-  private apiUrl: string = 'https://restcountries.eu/rest/v2';
+  private apiUrl: string = 'https://restcountries.com/v2';
 
   get httpParams () {
-    return new HttpParams().set( 'fields', 'name;capital;alpha2Code;flag;population' );
+    return new HttpParams().set( 'fields', 'name,capital,alpha2Code,flag,population' );
   }
 
   constructor( private http: HttpClient ) { }
@@ -36,7 +36,7 @@ export class PaisService {
 
   buscarRegion( region: string ): Observable<Country[]> {
 
-    const url = `${ this.apiUrl }/region/${ region }`;
+    const url = `${ this.apiUrl }/regionalbloc/${ region }`;
 
     return this.http.get<Country[]>( url, { params: this.httpParams } )
             .pipe(
